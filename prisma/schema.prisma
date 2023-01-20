@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}
+
+model ufo_sightings {
+  id                 Int       @id @default(autoincrement())
+  date               String?   @db.VarChar
+  city               String?   @db.VarChar
+  state              String?   @db.VarChar
+  country            String?   @db.VarChar
+  shape              String?   @db.VarChar
+  duration_seconds   String?   @db.VarChar
+  duration_hours_min String?   @db.VarChar
+  comments           String?   @db.VarChar
+  reported_date      DateTime? @db.Date
+  latitude           Decimal?  @db.Decimal
+  longitude          Decimal?  @db.Decimal
+}
+

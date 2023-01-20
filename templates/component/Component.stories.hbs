@@ -1,0 +1,41 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import {{properCase name}} from 'ui';
+
+// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+export default {
+  title: '{{properCase name}}',
+  component: {{properCase name}},
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof {{properCase name}}>;
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template: ComponentStory<typeof {{properCase name}}> = (args) => <{{properCase name}} {...args} />;
+
+export const Primary = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Primary.args = {
+  primary: true,
+  label: '{{properCase name}}',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: '{{properCase name}}',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: '{{properCase name}}',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: '{{properCase name}}',
+};
