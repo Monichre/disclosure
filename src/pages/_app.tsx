@@ -1,17 +1,15 @@
-import { queryClient } from '@/lib/react-query';
-import { GlobalStyle, theme } from '@/shared/Global.styles';
-import { QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import { ThemeProvider } from 'styled-components';
+import { queryClient } from '@/lib/react-query'
+import { StyleProvider } from '@/styles/StyleProvider'
+import { QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import type { AppProps } from 'next/app'
 function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
+      <StyleProvider>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </StyleProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )

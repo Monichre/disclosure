@@ -3,14 +3,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useState } from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 
-const STYLE_VERSION_1 = `mapbox://styles/ellisliam/cl6nvdn3r003n14ob1lwoo3b6`
-const STYLE_VERSION_2 = `mapbox://styles/ellisliam/cld51oavf001e01o2eko08rd9`
-const STYLE_VERSION_3 = `mapbox://styles/ellisliam/cld51onue002r01mizxpg5l6u`
 const MapGL: any = ReactMapboxGl({
   accessToken: process.env.NEXT_PUBLIC_MAPBOX_PUBLIC_TOKEN || '',
 })
 
-export const Map: React.FC<any> = () => {
+// TilesetId: ellisliam.bmjwaijh
+export const Map: React.FC<any> = ({ sightings }) => {
   const center = [-125.148032, 19.613688] as unknown as [number, number]
   const feedCenter = [-122.612285, 37.815224] as unknown as [number, number]
 
@@ -42,7 +40,7 @@ export const Map: React.FC<any> = () => {
       pitch={state?.pitch}
       zoom={state?.zoom}
       center={state?.center}
-      style={STYLE_VERSION_3}
+      style={`mapbox://styles/ellisliam/cld51oavf001e01o2eko08rd9`}
       containerStyle={{ height: '100vh', width: '100vw' }}
       renderChildrenInPortal
     >
@@ -66,3 +64,5 @@ export const Map: React.FC<any> = () => {
     </MapGL>
   )
 }
+
+// Spinning Mapbox GL Globe: https://docs.mapbox.com/mapbox-gl-js/example/globe-spin/

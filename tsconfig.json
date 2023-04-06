@@ -30,6 +30,8 @@
       "@/*": ["src/*"],
       "@/components/*": ["src/components/*"],
       "@/lib/*": ["src/lib/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/hooks/*": ["src/hooks/*"],
       "@/api/*": ["src/api/*"],
       "@/pages/*": ["src/pages/*"],
       "@/features/*": ["src/features/*"],
@@ -37,6 +39,6 @@
       "@/services/geocode/*": ["src/services/geocode/*"]
     }
   },
-  "include": ["./src", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["./src", "next-env.d.ts", "**/*.ts", "**/*.tsx", "cli/index.js"],
   "exclude": ["node_modules", "data/**/*.pdf"]
 }
